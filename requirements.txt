@@ -1,0 +1,7 @@
+streamlit>=1.35
+fastembed>=0.4
+faiss-cpu>=1.8
+numpy>=1.26
+pypdf>=4.2
+groq>=0.9
+python-dotenv>=1.0
