@@ -14,9 +14,18 @@ from llm_client import ask_llm
 
 load_dotenv()
 
-st.set_page_config(page_title="DocuChat", page_icon="📄", layout="wide")
+groq_key = os.getenv("GROQ_API_KEY")
 
-st.title("📄 DocuChat")
+if not groq_key:
+    try:
+        groq_key = st.secrets.get("GROQ_API_KEY")
+    except Exception:
+        groq_key = None
+
+
+st.set_page_config(page_title="Doc-Chat", page_icon="📄", layout="wide")
+
+st.title("📄 Doc-Chat")
 st.caption("Ask questions about your PDF and get grounded, source-cited answers.")
 
 if "vector_store" not in st.session_state:
