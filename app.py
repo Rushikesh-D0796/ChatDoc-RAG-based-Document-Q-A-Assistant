@@ -12,7 +12,7 @@ from document_processor import extract_text_by_page, chunk_pages
 from vector_store import VectorStore
 from llm_client import ask_llm
 
-api_key = st.secrets["GROQ_API_KEY"]
+api_key = os.getenv("GROQ_API_KEY")
 
 st.set_page_config(page_title="Doc-Chat", page_icon="📄", layout="wide")
 
